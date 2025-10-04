@@ -13,13 +13,15 @@
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white flex flex-col gap-y-5 overflow-hidden p-10 shadow-sm sm:rounded-lg">
 
-                {{-- Notifikasi sukses --}}
-                @if (session('success'))
-                    <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)"
-                        class="text-green-500 mt-2 transition duration-500">
-                        {{ session('success') }}
-                    </p>
-                @endif
+                @role('buyer')
+                    {{-- Notifikasi sukses --}}
+                    @if (session('success'))
+                        <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)"
+                            class="text-green-500 mt-2 transition duration-500">
+                            {{ session('success') }}
+                        </p>
+                    @endif
+                @endrole
 
 
                 {{-- Informasi biaya & tanggal --}}
@@ -200,7 +202,11 @@
                     <div class="flex flex-col gap-3 items-center bg-gray-50 p-5 rounded-lg hover:shadow-lg transition-shadow duration-300 w-full md:w-auto"
                         x-data="{ preview: null }">
 
-                        <h3 class="text-lg md:text-xl font-bold text-indigo-950 mb-2 text-center">Bukti Nota</h3>
+                        <div class="mb-4">
+                            <h3 class="text-lg md:text-xl font-bold text-indigo-950 text-center">Bukti Nota</h3>
+                            <h3 class="text-lg md:text-lg font-bold text-gray-500 text-center">No Rekening:
+                                0000-0000-0000</h3>
+                        </div>
 
                         @role('buyer')
                             @if (!$service->attachment)
@@ -208,7 +214,8 @@
                                 <form action="{{ route('services.uploadNota', $service->id) }}" method="POST"
                                     enctype="multipart/form-data" class="flex flex-col gap-2 w-full max-w-xs md:max-w-sm">
                                     @csrf
-                                    <input type="file" name="attachment" required class="border rounded px-2 py-1 w-full"
+                                    <input type="file" name="attachment" required
+                                        class="border rounded px-2 py-1 w-full"
                                         @change="preview = $event.target.files[0] ? URL.createObjectURL($event.target.files[0]) : null">
 
                                     {{-- Preview sebelum submit --}}
