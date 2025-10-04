@@ -26,7 +26,7 @@ class RolePermissionSeeder extends Seeder
         ]);
 
         $buyer = User::create([
-            'name' => 'buyer',
+            'name' => 'alexsander',
             'email' => 'buyer@gmail.com',
             'password' => bcrypt('password'),
         ]);

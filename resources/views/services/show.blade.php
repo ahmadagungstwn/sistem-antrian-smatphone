@@ -205,7 +205,7 @@
                         <div class="mb-4">
                             <h3 class="text-lg md:text-xl font-bold text-indigo-950 text-center">Bukti Nota</h3>
                             <h3 class="text-lg md:text-lg font-bold text-gray-500 text-center">No Rekening:
-                                0000-0000-0000</h3>
+                                801-0123-4567</h3>
                         </div>
 
                         @role('buyer')

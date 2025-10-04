@@ -25,13 +25,13 @@ class DatabaseSeeder extends Seeder
 
         Service::create([
             'queue_number' => 1,
-            'customer_name' => 'John Doe',
+            'customer_name' => 'alexander',
             'phone_type' => 'Samsung',
             'damage_description' => 'Screen broken',
-            'repair_costs' => 100000,
+            'repair_costs' => null,
             'notes' => null,
             'attachment' => null,
-            'user_id' => 1,
+            'user_id' => 2,
             'status_confirmation' => 'Menunggu Konfirmasi',
             'rejection_notes' => null,
             'status_repair' => 'Menunggu Antrian',
@@ -42,6 +42,34 @@ class DatabaseSeeder extends Seeder
             'customer_name' => 'alexander',
             'phone_type' => 'xiaomi',
             'damage_description' => 'LCD broken',
+            'repair_costs' => 250000,
+            'notes' => null,
+            'attachment' => null,
+            'user_id' => 2,
+            'status_confirmation' => 'Menunggu Konfirmasi',
+            'rejection_notes' => null,
+            'status_repair' => 'Menunggu Antrian',
+        ]);
+
+        Service::create([
+            'queue_number' => 3,
+            'customer_name' => 'alexander',
+            'phone_type' => 'oppo',
+            'damage_description' => 'Mati total',
+            'repair_costs' => 250000,
+            'notes' => null,
+            'attachment' => null,
+            'user_id' => 2,
+            'status_confirmation' => 'Menunggu Konfirmasi',
+            'rejection_notes' => null,
+            'status_repair' => 'Menunggu Antrian',
+        ]);
+
+        Service::create([
+            'queue_number' => 4,
+            'customer_name' => 'alexander',
+            'phone_type' => 'oppo',
+            'damage_description' => 'Port Charngin rusak',
             'repair_costs' => 250000,
             'notes' => null,
             'attachment' => null,
